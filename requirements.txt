@@ -1,0 +1,2 @@
+mitmproxy==10.4.2
+updog==1.4
