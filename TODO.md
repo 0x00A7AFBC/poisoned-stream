@@ -4,6 +4,5 @@
 - **[❌]** Windows
 - **[❌]** Linux
 - **[❌]** MacOS
-
 **[❌]** Implement custom js injection
 
