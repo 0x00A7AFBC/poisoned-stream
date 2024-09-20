@@ -1,4 +1,8 @@
 from mitmproxy import http, ctx
 
-def response(flow: http.HTTPFlow) -> None:
-    print(flow)
+class ResponseSniffer:
+    def response(self, flow: http.HTTPFlow) -> None:
+        print(flow.response)
+        print(flow.response.text)
+
+addons = [ResponseSniffer()]
