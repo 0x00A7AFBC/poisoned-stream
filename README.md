@@ -7,7 +7,7 @@
 ### Static file replacer (files-to-replace.json)</br>
 ```
 {
-"/some/arbitrary/enboint.txt":"/path/to/file/to/replace"
+"/some/arbitrary/endpoint.txt":"/path/to/file/to/replace"
 }
 ```
 # TODO
