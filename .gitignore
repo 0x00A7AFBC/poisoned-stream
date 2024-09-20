@@ -1,3 +1,4 @@
 env/
 __pycache__/
 response-sniffer.py
+files-to-replace.txt
