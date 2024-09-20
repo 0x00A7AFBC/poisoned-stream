@@ -1,4 +1,5 @@
 import json
+import os
 
 from mitmproxy import http, addonmanager
 
@@ -14,7 +15,9 @@ class ReplaceFiles:
         if endpoint in self.config:
             flow.intercept()
 
-            with open(config[endpoint], 'r') as file:
+            abs_to_file = os.path.abspath(self.config[endpoint])
+
+            with open(abs_to_file, 'r') as file:
                 content = file.read()
                 flow.response.text = content
 
