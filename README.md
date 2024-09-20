@@ -1,4 +1,5 @@
 # Poisoned stream
+Reverse HTTP(S) proxy based on mitmproxy to inject shellcode into file streams
 ## Usage
 ```
 usage: poison.py [-h] -u URL [-p PORT] -c CONFIG [--cert CERT]
