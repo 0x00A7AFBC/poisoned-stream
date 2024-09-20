@@ -3,8 +3,6 @@
 ```
 usage: poison.py [-h] -u URL [-p PORT] -c CONFIG [--cert CERT]
 
-Reverse HTTP(S) proxy based on mitmproxy to inject shellcode into file streams
-
 options:
   -h, --help            show this help message and exit
   -u URL, --url URL     Url to proxy
