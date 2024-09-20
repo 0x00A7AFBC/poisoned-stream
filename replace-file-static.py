@@ -5,7 +5,7 @@ from mitmproxy import http, addonmanager
 
 class ReplaceFiles:
     def load(self, loader: addonmanager.Loader):
-        with open('./files-to-replace.json', 'r') as file:
+        with open(os.environ['PROXY_CONFIG'], 'r') as file:
             config = file.read()
             self.config = json.loads(config)
 

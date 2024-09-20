@@ -20,6 +20,6 @@
   - **[❌]** Linux
   - **[❌]** MacOS
 - **[❌]** Implement custom js injection
-- **[⏳]** Create cli
-  - **[❌]** Add arg for selecting custom config
+- **[✅]** Create cli
+  - **[✅]** Add arg for selecting custom config
 
