@@ -1,13 +1,20 @@
 # Poisoned stream
 ## Usage
-### Response sniffer with updog as an example target
-```$ updog```</br>
-```$ mitmdump --mode reverse:http://127.0.0.1:9090 -s response-sniffer.py```
-### Static file replacer with updog as example target
-```$ updog```</br>
-```$ mitmdump --mode reverse:http://127.0.0.1:9090 -s replace-file-static.py```
-## Example config
-### Static file replacer (files-to-replace.json)</br>
+```
+usage: poison.py [-h] -u URL [-p PORT] -c CONFIG [--cert CERT]
+
+Reverse HTTP(S) proxy based on mitmproxy to inject shellcode into file streams
+
+options:
+  -h, --help            show this help message and exit
+  -u URL, --url URL     Url to proxy
+  -p PORT, --port PORT  Port to listen in
+  -c CONFIG, --config CONFIG
+                        Path to your configuration file
+  --cert CERT           Path to ssl certificate to use. If not provided default to mitmproxy cert
+```
+
+## Example config</br>
 ```
 {
 "/some/arbitrary/endpoint.txt":"/path/to/file/to/replace"
