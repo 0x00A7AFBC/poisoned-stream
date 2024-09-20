@@ -2,3 +2,4 @@ env/
 __pycache__/
 response-sniffer.py
 files-to-replace.json
+activate.bat
