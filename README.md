@@ -3,6 +3,9 @@
 ### Response sniffer with updog as an example target
 ```$ updog```</br>
 ```$ mitmdump --mode reverse:http://127.0.0.1:9090 -s response-sniffer.py```
+### Static file replacer with updog as example target
+```$ updog```</br>
+```$ mitmdump --mode reverse:http://127.0.0.1:9090 -s replace-file-static.py```
 ## Example config
 ### Static file replacer (files-to-replace.json)</br>
 ```
