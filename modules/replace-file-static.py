@@ -12,7 +12,7 @@ class ReplaceFiles:
     def response(self, flow: http.HTTPFlow) -> None:#
         endpoint = flow.request.path
         
-        if endpoint in self.config:
+        if endpoint in self.config["replace"]:
             flow.intercept()
 
             abs_to_file = os.path.abspath(self.config[endpoint])

@@ -16,7 +16,13 @@ options:
 ## Example config</br>
 ```
 {
-"/some/arbitrary/endpoint.txt":"/path/to/file/to/replace"
+    "replace":{
+        "/arbitrary/endpoint":"/path/to/file"
+    },
+    "inject":{
+        "pre":"<script>alert(1)</script>",
+        "post":"/path/to/file"
+    }
 }
 ```
 # TODO
@@ -25,7 +31,7 @@ options:
   - **[❌]** Windows
   - **[❌]** Linux
   - **[❌]** MacOS
-- **[❌]** Implement custom js injection
+- **[✅]** Implement custom js injection
 - **[✅]** Create cli
   - **[✅]** Add arg for selecting custom config
 

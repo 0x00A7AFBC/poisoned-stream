@@ -21,7 +21,7 @@ def main():
     if args.cert:
         opts += ['--certs', f'*={args.cert}']
 
-    scripts = ['-s', 'replace-file-static.py']
+    scripts = ['-s', './modules/replace-file-static.py', '-s', './modules/inject-js.py']
 
     proxy_args = ['mitmdump'] + opts + scripts
 
