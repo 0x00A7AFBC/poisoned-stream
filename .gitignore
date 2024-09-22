@@ -2,4 +2,7 @@ env/
 __pycache__/
 response-sniffer.py
 *.json
-activate.cmd
+*.txt
+*.bin
+*.js
+*.cmd
