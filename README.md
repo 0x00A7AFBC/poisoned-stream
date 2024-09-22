@@ -14,7 +14,7 @@ options:
 ```
 
 ## Example config</br>
-```
+```json
 {
     "replace":{
         "/arbitrary/endpoint":"/path/to/file"
