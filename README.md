@@ -25,6 +25,10 @@ options:
     }
 }
 ```
+# Setup
+```
+pip install -r requirements.txt
+```
 # TODO
 - **[✅]** Implement replacing files when matching
 - **[❌]** Implement dynamic shellcode injection into codecaves
