@@ -10,38 +10,42 @@ class InjectJS:
             self.config = json.loads(config)
 
     def response(self, flow: http.HTTPFlow) -> None:
+        if 'inject' not in self.config:
+            return
+
         if 'Content-Type' not in flow.response.headers:
             return
 
-        if 'text/html' in flow.response.headers['Content-Type']:
-            if 'inject' in self.config:
-                flow.intercept()
+        if 'text/html' not in flow.response.headers['Content-Type']:
+            return
 
-                content = flow.response.text
+        flow.intercept()
 
-                if 'pre' in self.config['inject']:
-                    path = self.config['inject']['pre']
+        content = flow.response.text
 
-                    if os.path.exists(path):
-                        script = open(os.path.abspath(path), 'r').read()
-                        content = f'<script>{script}</script>' + content
-                    else:
-                        content = self.config['inject']['pre'] + content
+        if 'pre' in self.config['inject']:
+            path = self.config['inject']['pre']
 
+            if os.path.exists(path):
+                script = open(os.path.abspath(path), 'r').read()
+                content = f'<script>{script}</script>' + content
+            else:
+                content = self.config['inject']['pre'] + content
+
+        
+        if 'post' in self.config['inject']:
+            path = self.config['inject']['post']
+
+            if os.path.exists(path):
+                script = open(os.path.abspath(path), 'r').read()
                 
-                if 'post' in self.config['inject']:
-                    path = self.config['inject']['post']
+                content += f'<script>{script}</script>'
+            else:
+                content += self.config['inject']['post']
 
-                    if os.path.exists(path):
-                        script = open(os.path.abspath(path), 'r').read()
-                        
-                        content += f'<script>{script}</script>'
-                    else:
-                        content += self.config['inject']['post']
+        flow.response.text = content
 
-                flow.response.text = content
-
-                flow.resume()
+        flow.resume()
 
 addons = [InjectJS()]
 
