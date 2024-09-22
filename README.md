@@ -26,7 +26,7 @@ options:
 }
 ```
 # Setup
-```
+```sh
 pip install -r requirements.txt
 ```
 # TODO
