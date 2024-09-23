@@ -10,6 +10,7 @@ def main():
     parser.add_argument('-u', '--url', help='Url to proxy', action='store', required=True)
     parser.add_argument('-p', '--port', help='Port to listen in', action='store', default=8080, type=int)
     parser.add_argument('-c', '--config', help='Path to your configuration file', action='store', required=True)
+    parser.add_argument('-m', '--module', help='Add custom modules', action='append')
     parser.add_argument('--cert', help='Path to ssl certificate to use. If not provided default to mitmproxy cert', action='store')
 
     args = parser.parse_args()
@@ -22,6 +23,10 @@ def main():
         opts += ['--certs', f'*={args.cert}']
 
     scripts = ['-s', './modules/replace-file-static.py', '-s', './modules/inject-js.py']
+
+    if args.module:
+        for module in args.module:
+            scripts += ['-s', os.path.abspath(module)]
 
     proxy_args = ['mitmdump'] + opts + scripts
 

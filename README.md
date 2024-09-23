@@ -2,7 +2,7 @@
 Reverse HTTP(S) proxy based on mitmproxy to inject shellcode into file streams and other fun things :3
 ## Usage
 ```
-usage: poison.py [-h] -u URL [-p PORT] -c CONFIG [--cert CERT]
+usage: poison.py [-h] -u URL [-p PORT] -c CONFIG [-m MODULE] [--cert CERT]
 
 options:
   -h, --help            show this help message and exit
@@ -10,9 +10,10 @@ options:
   -p PORT, --port PORT  Port to listen in
   -c CONFIG, --config CONFIG
                         Path to your configuration file
+  -m MODULE, --module MODULE
+                        Add custom modules
   --cert CERT           Path to ssl certificate to use. If not provided default to mitmproxy cert
 ```
-
 ## Example config</br>
 ```json
 {
