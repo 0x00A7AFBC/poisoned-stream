@@ -32,10 +32,11 @@ pip install -r requirements.txt
 ```
 # TODO
 - **[✅]** Implement replacing files when matching
-- **[❌]** Implement dynamic shellcode injection into codecaves
-  - **[❌]** Windows
+- **[⌛]** Implement dynamic shellcode injection into codecaves
+  - **[⌛]** Windows
   - **[❌]** Linux
   - **[❌]** MacOS
+  - **[❌]** Solve ASLR problem
 - **[✅]** Implement custom js injection
 - **[✅]** Create cli
   - **[✅]** Add arg for selecting custom config
